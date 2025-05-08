@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+</head>
+<body class="bg-black"> 
+    <div id="mouse-circle" class="fixed top-0 left-0 w-[500px] h-[500px] rounded-full bg-white opacity-30 pointer-events-none z-0 transition-all duration-200"></div>
+    <script>
+        const circle = document.getElementById("mouse-circle");
+      
+        let mouseX = 0;
+        let mouseY = 0;
+        let currentX = 0;
+        let currentY = 0;
+        const speed = 0.3; // Чим менше число — тим плавніше (але повільніше)
+      
+        document.addEventListener("mousemove", (e) => {
+          mouseX = e.clientX - circle.offsetWidth / 2;
+          mouseY = e.clientY - circle.offsetHeight / 2;
+        });
+      
+        function animate() {
+          currentX += (mouseX - currentX) * speed;
+          currentY += (mouseY - currentY) * speed;
+      
+          circle.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+          requestAnimationFrame(animate);
+        }
+      
+        animate();
+      </script>
+
+    <!-- Головна сторінка -->
+
+    <header class="container p-3 mx-auto pt-20 h-screen">
+        <div class="h-full">
+            <div>
+                <h1 class="text-white text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold">
+                    <span id="typed-name"></span>
+                </h1>
+                <h3 class="text-white inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold">
+                    <span id="typed-title"></span>
+                </h3>
+                <h6 class="text-white inline-block text-2xl sm:text-3xl md:text-4xl lg:text-5xl sm:text-base font-medium opacity-70">
+                    <span id="typed-focus"></span>
+                </h6>
+                <p class="text-white text-base sm:text-1xl md:text-2xl lg:text-3xl font-medium opacity-50">
+                    <span id="typed-desc"></span>
+                </p>
+            </div>            
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new Typed("#typed-name", {
+                    strings: ["Olexandr Mylian"],
+                    typeSpeed: 60,
+                    showCursor: false,
+                  });
+
+                  new Typed("#typed-title", {
+                    strings: ["Fullstack Developer"],
+                    typeSpeed: 50,
+                    startDelay: 400,
+                    showCursor: false,
+                  });
+              
+                  new Typed("#typed-focus", {
+                    strings: ["(Python backend focused)"],
+                    typeSpeed: 40,
+                    startDelay: 800,
+                    showCursor: false,
+                  });
+              
+                  new Typed("#typed-desc", {
+                    strings: [
+                      "I am fond of backend architecture. I learn, practice, and create.",
+                      "I learn, practice, and create.",
+                    ],
+                    typeSpeed: 30,
+                    backSpeed: 10,
+                    startDelay: 1000,
+                    loop: true,
+                    loopCount: Infinity,
+                    backDelay: 2000,
+                  });
+                });
+              </script>
+              
+    
+            <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-full py-4 px-6 w-fit mt-6">
+                <ul class="list-none p-0 m-0 flex gap-5">
+                    <li class="menu-item">
+                        <a href="#about" class="block text-white font-semibold">About me</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#portfolio" class="block text-white font-semibold">Portfolio</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#contact" class="block text-white font-semibold">Contact me</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#faq" class="block text-white font-semibold">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Про мене -->
+
+    <section id="about" class="container p-3 mx-auto flex  flex-col lg:flex-row justify-between min-h-screen items-center">
+        <div class="mt-6">
+            <h1 class="text-white text-4xl sm:text-5xl font-bold mb-3">About me</h1>
+            <p class="text-white text-sm sm:text-base font-medium opacity-50 max-w-[700px]">Hi! I'm Oleksandr, an 18-year-old student and web developer from Ukraine. My passion for web development began early — starting with visual design and diving into the world of color, layout, and typography. Later, I got into frontend development, and eventually, I found a deep interest in backend technologies and server-side logic. <br><br>I love working where design meets development — crafting experiences that not only look great but are also engineered for speed, clarity, and usability. For me, a website isn't just a visual product — it's a living system that should feel intuitive and perform seamlessly. <br><br>Today, I build full websites from the ground up — from design to backend architecture. I have a solid foundation for creating reliable web solutions for small businesses, and I'm constantly learning and growing. Development, for me, is more than writing code — it’s a mindset, a craft, and a form of creative exploration.</p>
+        </div>
+        <div class="mt-6">
+            <h3 class="text-white text-lg sm:text-2xl font-semibold mb-3">🧠 Core Skills</h3>
+            <h6 class="text-white text-sm sm:text-base font-medium uppercase mb-3">Languages/</h6>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/python.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">Python</p>
+                </div>
+            </div>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/js.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">JavaScript</p>
+                </div>
+            </div>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/html.png" class="w-[23px]">
+                    </div>
+                    <p class="text-white ms-2">HTML5</p>
+                </div>
+            </div>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/css.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">CSS3</p>
+                </div>
+            </div>
+            <h6 class="text-white text-sm sm:text-base font-medium uppercase mb-3">Backend/</h6>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/Django.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">Django</p>
+                </div>
+            </div>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/flask.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">Flask</p>
+                </div>
+            </div>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/fastAPI.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">FastAPI</p>
+                </div>
+            </div>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/SQLite.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">SQLite</p>
+                </div>
+            </div>
+            <h6 class="text-white text-sm sm:text-base font-medium uppercase mb-3">Frontend/</h6>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/Tailwind CSS.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">Tailwind CSS</p>
+                </div>
+            </div>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/bootstrap.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">Bootstrap</p>
+                </div>
+            </div>
+            <h6 class="text-white text-sm sm:text-base font-medium uppercase mb-3">Other tools/</h6>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/figma.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">Figma</p>
+                </div>
+            </div>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/git.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">Git</p>
+                </div>
+            </div>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/gitHub.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">GitHub</p>
+                </div>
+            </div>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/docker.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">Docker</p>
+                </div>
+            </div>
+            <div class="inline-block">
+                <div class="flex items-center me-3 mb-3">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                        <img src="/assets/icons/Gunicorn.png" alt="" class="w-[25px]">
+                    </div>
+                    <p class="text-white ms-2">Gunicorn</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Портфоліо -->
+
+    <section id="portfolio" class="h-screen pt-20 p-3">
+        <h1 class="text-white text-4xl sm:text-5xl font-bold mb-6 container mx-auto p-3">Portfolio</h1>
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide">
+                  <div class="max-w-[500px]">
+                    <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-xl p-3">
+                        <img src="/assets/Seascouting.png" alt="">
+                    </div>
+                    <div class="p-3">
+                        <h6 class="text-white text-sm sm:text-base uppercase mb-1 font-bold">Seascouting</h6>
+                        <p class="text-white text-sm sm:text-base font-medium opacity-50 mb-3">An informational website designed to introduce the activities of the scouting organization. It contains sections on the mission, values, history, and areas of work of the scouts. A separate block is designed for storing and structured viewing of useful materials: tips, instructions and other resources.</p>
+                        <div class="inline-block">
+                            <div class="flex items-center me-3 mb-3">
+                                <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                                    <img src="/assets/icons/fastAPI.png" alt="" class="w-[25px]">
+                                </div>
+                                <p class="text-white ms-2">FastAPI</p>
+                            </div>
+                        </div>
+                        <div class="inline-block">
+                            <div class="flex items-center me-3 mb-3">
+                                <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                                    <img src="/assets/icons/figma.png" alt="" class="w-[25px]">
+                                </div>
+                                <p class="text-white ms-2">Figma</p>
+                            </div>
+                        </div>
+                        <div class="inline-block">
+                            <div class="flex items-center me-3 mb-3">
+                                <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                                    <img src="/assets/icons/bootstrap.png" alt="" class="w-[25px]">
+                                </div>
+                                <p class="text-white ms-2">Bootstrap</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </li>
+                <li class="glide__slide">
+                    <div class="max-w-[500px]">
+                      <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-xl p-3">
+                          <img src="/assets/Seascouting.png" alt="">
+                      </div>
+                      <div class="p-3">
+                          <h6 class="text-white text-sm sm:text-base uppercase mb-1 font-bold">Seascouting</h6>
+                          <p class="text-white text-sm sm:text-base font-medium opacity-50 mb-3">An informational website designed to introduce the activities of the scouting organization. It contains sections on the mission, values, history, and areas of work of the scouts. A separate block is designed for storing and structured viewing of useful materials: tips, instructions and other resources.</p>
+                          <div class="inline-block">
+                              <div class="flex items-center me-3 mb-3">
+                                  <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                                      <img src="/assets/icons/fastAPI.png" alt="" class="w-[25px]">
+                                  </div>
+                                  <p class="text-white ms-2">FastAPI</p>
+                              </div>
+                          </div>
+                          <div class="inline-block">
+                              <div class="flex items-center me-3 mb-3">
+                                  <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                                      <img src="/assets/icons/figma.png" alt="" class="w-[25px]">
+                                  </div>
+                                  <p class="text-white ms-2">Figma</p>
+                              </div>
+                          </div>
+                          <div class="inline-block">
+                              <div class="flex items-center me-3 mb-3">
+                                  <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                                      <img src="/assets/icons/bootstrap.png" alt="" class="w-[25px]">
+                                  </div>
+                                  <p class="text-white ms-2">Bootstrap</p>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+                  </li>
+                  <li class="glide__slide">
+                    <div class="max-w-[500px]">
+                      <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-xl p-3">
+                          <img src="/assets/Seascouting.png" alt="">
+                      </div>
+                      <div class="p-3">
+                          <h6 class="text-white text-sm sm:text-base uppercase mb-1 font-bold">Seascouting</h6>
+                          <p class="text-white text-sm sm:text-base font-medium opacity-50 mb-3">An informational website designed to introduce the activities of the scouting organization. It contains sections on the mission, values, history, and areas of work of the scouts. A separate block is designed for storing and structured viewing of useful materials: tips, instructions and other resources.</p>
+                          <div class="inline-block">
+                              <div class="flex items-center me-3 mb-3">
+                                  <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                                      <img src="/assets/icons/fastAPI.png" alt="" class="w-[25px]">
+                                  </div>
+                                  <p class="text-white ms-2">FastAPI</p>
+                              </div>
+                          </div>
+                          <div class="inline-block">
+                              <div class="flex items-center me-3 mb-3">
+                                  <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                                      <img src="/assets/icons/figma.png" alt="" class="w-[25px]">
+                                  </div>
+                                  <p class="text-white ms-2">Figma</p>
+                              </div>
+                          </div>
+                          <div class="inline-block">
+                              <div class="flex items-center me-3 mb-3">
+                                  <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
+                                      <img src="/assets/icons/bootstrap.png" alt="" class="w-[25px]">
+                                  </div>
+                                  <p class="text-white ms-2">Bootstrap</p>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+                  </li>
+              </ul>
+            </div>
+            <div class="glide__bullets flex justify-center gap-3 mt-4" data-glide-el="controls[nav]">
+                <button class="glide__bullet w-4 h-4 bg-white/10 border border-white/40 rounded-full hover:bg-white/20 transition" data-glide-dir="=0"></button>
+                <button class="glide__bullet w-4 h-4 bg-white/10 border border-white/40 rounded-full hover:bg-white/20 transition" data-glide-dir="=1"></button>
+                <button class="glide__bullet w-4 h-4 bg-white/10 border border-white/40 rounded-full hover:bg-white/20 transition" data-glide-dir="=2"></button>
+              </div>
+          </div>
+    </section>
+    <script>
+        new Glide('.glide', {
+          type: 'carousel',
+          perView: 3, 
+          gap: 20,    
+          breakpoints: {
+            1024: { perView: 2 },
+            768: { perView: 1 }
+          }
+        }).mount()
+      </script>
+
+    <!-- Контакти -->
+
+    <section class="text-white container p-3 mx-auto mt-16">
+        <div class="flex flex-col lg:flex-row gap-32">
+          <div id="contact" class="flex-1 max-w-full lg:max-w-[500px] order-2 lg:order-1">
+            <h1 class="text-white text-4xl sm:text-5xl font-bold mb-6">Contact me</h1>
+            <div class="flex justify-start gap-4 mb-8">
+              <a href="#" class="w-12 h-12 border border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition">
+                <i class="fab fa-github text-xl"></i>
+              </a>
+              <a href="#" class="w-12 h-12 border border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition">
+                <i class="fab fa-linkedin-in text-xl"></i>
+              </a>
+              <a href="#" class="w-12 h-12 border border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition">
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a href="#" class="w-12 h-12 border border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition">
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+            </div>
+            <form class="space-y-6">
+              <div>
+                <input type="text" placeholder="name" class="w-full bg-black border-b border-white text-white placeholder-gray-400 focus:outline-none focus:border-gray-300 pb-2">
+              </div>
+              <div>
+                <input type="email" placeholder="email" class="w-full bg-black border-b border-white text-white placeholder-gray-400 focus:outline-none focus:border-gray-300 pb-2">
+              </div>
+              <div>
+                <textarea rows="4" placeholder="comment" class="w-full bg-black border-b border-white text-white placeholder-gray-400 focus:outline-none focus:border-gray-300 pb-2"></textarea>
+              </div>
+              <button type="submit" class="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">SEND</button>
+            </form>
+          </div>
+
+    <!-- Поширені питання -->
+      
+          <div id="faq"  class="flex-1 space-y-6 order-1 lg:order-2">
+            <h1 class="text-white text-4xl sm:text-5xl font-bold mb-6">FAQ</h1>
+      
+            <details class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-xl p-4">
+              <summary class="cursor-pointer text-white text-sm sm:text-base uppercase mb-1 font-bold flex items-center justify-between">
+                How the work is paid
+                <span class="transition-transform group-open:rotate-20">+</span>
+              </summary>
+              <p class="mt-2 text-white/80">It is a long established fact...</p>
+            </details>
+            <details class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-xl p-4">
+              <summary class="cursor-pointer text-white text-sm sm:text-base uppercase mb-1 font-bold flex items-center justify-between">
+                How the work is paid
+                <span class="transition-transform group-open:rotate-20">+</span>
+              </summary>
+              <p class="mt-2 text-white/80">It is a long established fact...</p>
+            </details>
+            <details class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-xl p-4">
+                <summary class="cursor-pointer text-white text-sm sm:text-base uppercase mb-1 font-bold flex items-center justify-between">
+                  How the work is paid
+                  <span class="transition-transform group-open:rotate-20">+</span>
+                </summary>
+                <p class="mt-2 text-white/80">It is a long established fact...</p>
+              </details>
+              <details class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-xl p-4">
+                <summary class="cursor-pointer text-white text-sm sm:text-base uppercase mb-1 font-bold flex items-center justify-between">
+                  How the work is paid
+                  <span class="transition-transform group-open:rotate-20">+</span>
+                </summary>
+                <p class="mt-2 text-white/80">It is a long established fact...</p>
+              </details>
+      
+          </div>
+        </div>
+      </section>
+      <hr class="mt-32">
+      <p class="text-white text-sm sm:text-base font-medium opacity-50  container py-5 px-3 mx-auto">© 2025 portfolio. All rights reserved.</p>
+</body>
+</html>
