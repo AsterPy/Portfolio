@@ -8,42 +8,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Виправлено шлях -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    
 </head>
 <body class="bg-black"> 
     <div id="mouse-circle" class="fixed top-0 left-0 w-[500px] h-[500px] rounded-full bg-white opacity-30 pointer-events-none z-0 transition-all duration-200"></div>
     <script>
         const circle = document.getElementById("mouse-circle");
-      
         let mouseX = 0;
         let mouseY = 0;
         let currentX = 0;
         let currentY = 0;
         const speed = 0.3; // Чим менше число — тим плавніше (але повільніше)
-      
         document.addEventListener("mousemove", (e) => {
           mouseX = e.clientX - circle.offsetWidth / 2;
           mouseY = e.clientY - circle.offsetHeight / 2;
         });
-      
         function animate() {
           currentX += (mouseX - currentX) * speed;
           currentY += (mouseY - currentY) * speed;
-      
           circle.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
           requestAnimationFrame(animate);
         }
-      
         animate();
       </script>
-
     <!-- Головна сторінка -->
-
     <header class="container p-3 mx-auto pt-20 h-screen">
         <div class="h-full">
             <div>
@@ -67,21 +59,18 @@
                     typeSpeed: 60,
                     showCursor: false,
                   });
-
                   new Typed("#typed-title", {
                     strings: ["Fullstack Developer"],
                     typeSpeed: 50,
                     startDelay: 400,
                     showCursor: false,
                   });
-              
                   new Typed("#typed-focus", {
                     strings: ["(Python backend focused)"],
                     typeSpeed: 40,
                     startDelay: 800,
                     showCursor: false,
                   });
-              
                   new Typed("#typed-desc", {
                     strings: [
                       "I am fond of backend architecture. I learn, practice, and create.",
@@ -96,8 +85,6 @@
                   });
                 });
               </script>
-              
-    
             <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-full py-4 px-6 w-fit mt-6">
                 <ul class="list-none p-0 m-0 flex gap-5">
                     <li class="menu-item">
@@ -116,9 +103,7 @@
             </div>
         </div>
     </header>
-
     <!-- Про мене -->
-
     <section id="about" class="container p-3 mx-auto flex  flex-col lg:flex-row justify-between min-h-screen items-center">
         <div class="mt-6">
             <h1 class="text-white text-4xl sm:text-5xl font-bold mb-3">About me</h1>
@@ -130,7 +115,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/python.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/python.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">Python</p>
                 </div>
@@ -138,7 +123,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/js.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/js.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">JavaScript</p>
                 </div>
@@ -146,7 +131,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/html.png" class="w-[23px]">
+                        <img src="assets/icons/html.png" class="w-[23px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">HTML5</p>
                 </div>
@@ -154,7 +139,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/css.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/css.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">CSS3</p>
                 </div>
@@ -163,7 +148,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/Django.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/Django.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">Django</p>
                 </div>
@@ -171,7 +156,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/flask.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/flask.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">Flask</p>
                 </div>
@@ -179,7 +164,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/fastAPI.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/fastAPI.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">FastAPI</p>
                 </div>
@@ -187,7 +172,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/SQLite.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/SQLite.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">SQLite</p>
                 </div>
@@ -196,7 +181,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/Tailwind CSS.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/Tailwind CSS.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">Tailwind CSS</p>
                 </div>
@@ -204,7 +189,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/bootstrap.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/bootstrap.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">Bootstrap</p>
                 </div>
@@ -213,7 +198,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/figma.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/figma.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">Figma</p>
                 </div>
@@ -221,7 +206,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/git.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/git.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">Git</p>
                 </div>
@@ -229,7 +214,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/gitHub.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/gitHub.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">GitHub</p>
                 </div>
@@ -237,7 +222,7 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/docker.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/docker.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">Docker</p>
                 </div>
@@ -245,16 +230,14 @@
             <div class="inline-block">
                 <div class="flex items-center me-3 mb-3">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                        <img src="/assets/icons/Gunicorn.png" alt="" class="w-[25px]">
+                        <img src="assets/icons/Gunicorn.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                     </div>
                     <p class="text-white ms-2">Gunicorn</p>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Портфоліо -->
-
     <section id="portfolio" class="h-screen pt-20 p-3">
         <h1 class="text-white text-4xl sm:text-5xl font-bold mb-6 container mx-auto p-3">Portfolio</h1>
         <div class="glide">
@@ -263,7 +246,7 @@
                 <li class="glide__slide">
                   <div class="max-w-[500px]">
                     <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-xl p-3">
-                        <img src="/assets/Seascouting.png" alt="">
+                        <img src="assets/Seascouting.png" alt=""> <!-- Виправлено шлях -->
                     </div>
                     <div class="p-3">
                         <h6 class="text-white text-sm sm:text-base uppercase mb-1 font-bold">Seascouting</h6>
@@ -271,7 +254,7 @@
                         <div class="inline-block">
                             <div class="flex items-center me-3 mb-3">
                                 <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                                    <img src="/assets/icons/fastAPI.png" alt="" class="w-[25px]">
+                                    <img src="assets/icons/fastAPI.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                                 </div>
                                 <p class="text-white ms-2">FastAPI</p>
                             </div>
@@ -279,7 +262,7 @@
                         <div class="inline-block">
                             <div class="flex items-center me-3 mb-3">
                                 <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                                    <img src="/assets/icons/figma.png" alt="" class="w-[25px]">
+                                    <img src="assets/icons/figma.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                                 </div>
                                 <p class="text-white ms-2">Figma</p>
                             </div>
@@ -287,7 +270,7 @@
                         <div class="inline-block">
                             <div class="flex items-center me-3 mb-3">
                                 <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                                    <img src="/assets/icons/bootstrap.png" alt="" class="w-[25px]">
+                                    <img src="assets/icons/bootstrap.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                                 </div>
                                 <p class="text-white ms-2">Bootstrap</p>
                             </div>
@@ -298,7 +281,7 @@
                 <li class="glide__slide">
                     <div class="max-w-[500px]">
                       <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-xl p-3">
-                          <img src="/assets/Seascouting.png" alt="">
+                          <img src="assets/Seascouting.png" alt=""> <!-- Виправлено шлях -->
                       </div>
                       <div class="p-3">
                           <h6 class="text-white text-sm sm:text-base uppercase mb-1 font-bold">Seascouting</h6>
@@ -306,7 +289,7 @@
                           <div class="inline-block">
                               <div class="flex items-center me-3 mb-3">
                                   <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                                      <img src="/assets/icons/fastAPI.png" alt="" class="w-[25px]">
+                                      <img src="assets/icons/fastAPI.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                                   </div>
                                   <p class="text-white ms-2">FastAPI</p>
                               </div>
@@ -314,7 +297,7 @@
                           <div class="inline-block">
                               <div class="flex items-center me-3 mb-3">
                                   <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                                      <img src="/assets/icons/figma.png" alt="" class="w-[25px]">
+                                      <img src="assets/icons/figma.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                                   </div>
                                   <p class="text-white ms-2">Figma</p>
                               </div>
@@ -322,7 +305,7 @@
                           <div class="inline-block">
                               <div class="flex items-center me-3 mb-3">
                                   <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                                      <img src="/assets/icons/bootstrap.png" alt="" class="w-[25px]">
+                                      <img src="assets/icons/bootstrap.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                                   </div>
                                   <p class="text-white ms-2">Bootstrap</p>
                               </div>
@@ -333,7 +316,7 @@
                   <li class="glide__slide">
                     <div class="max-w-[500px]">
                       <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-xl p-3">
-                          <img src="/assets/Seascouting.png" alt="">
+                          <img src="assets/Seascouting.png" alt=""> <!-- Виправлено шлях -->
                       </div>
                       <div class="p-3">
                           <h6 class="text-white text-sm sm:text-base uppercase mb-1 font-bold">Seascouting</h6>
@@ -341,7 +324,7 @@
                           <div class="inline-block">
                               <div class="flex items-center me-3 mb-3">
                                   <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                                      <img src="/assets/icons/fastAPI.png" alt="" class="w-[25px]">
+                                      <img src="assets/icons/fastAPI.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                                   </div>
                                   <p class="text-white ms-2">FastAPI</p>
                               </div>
@@ -349,7 +332,7 @@
                           <div class="inline-block">
                               <div class="flex items-center me-3 mb-3">
                                   <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                                      <img src="/assets/icons/figma.png" alt="" class="w-[25px]">
+                                      <img src="assets/icons/figma.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                                   </div>
                                   <p class="text-white ms-2">Figma</p>
                               </div>
@@ -357,7 +340,7 @@
                           <div class="inline-block">
                               <div class="flex items-center me-3 mb-3">
                                   <div class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-2xl p-1">
-                                      <img src="/assets/icons/bootstrap.png" alt="" class="w-[25px]">
+                                      <img src="assets/icons/bootstrap.png" alt="" class="w-[25px]"> <!-- Виправлено шлях -->
                                   </div>
                                   <p class="text-white ms-2">Bootstrap</p>
                               </div>
@@ -385,9 +368,7 @@
           }
         }).mount()
       </script>
-
-    <!-- Контакти -->
-
+        <!-- Контакти -->
     <section class="text-white container p-3 mx-auto mt-16">
         <div class="flex flex-col lg:flex-row gap-32">
           <div id="contact" class="flex-1 max-w-full lg:max-w-[500px] order-2 lg:order-1">
@@ -419,12 +400,9 @@
               <button type="submit" class="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">SEND</button>
             </form>
           </div>
-
     <!-- Поширені питання -->
-      
           <div id="faq"  class="flex-1 space-y-6 order-1 lg:order-2">
             <h1 class="text-white text-4xl sm:text-5xl font-bold mb-6">FAQ</h1>
-      
             <details class="bg-white/10 border border-white/40 backdrop-blur-[7.5px] rounded-xl p-4">
               <summary class="cursor-pointer text-white text-sm sm:text-base uppercase mb-1 font-bold flex items-center justify-between">
                 How the work is paid
@@ -453,7 +431,6 @@
                 </summary>
                 <p class="mt-2 text-white/80">It is a long established fact...</p>
               </details>
-      
           </div>
         </div>
       </section>
